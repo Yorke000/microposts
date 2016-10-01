@@ -6,10 +6,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
-<%= link_to "Home",   '#' %>
+<%= link_to "Home",root_path %>
 </li>
         <li>
-<%= link_to "Help",   '#' %>
+<%= link_to "Help",'#' %>
 </li>
 
 
@@ -27,7 +27,7 @@
 <%= link_to "Profile", current_user %>
 </li>
               <li>
-<%= link_to "Settings", '#' %>
+<%= link_to "Settings", edit_user_path(current_user) %>
 </li>
               <li class="divider"></li>
               <li>

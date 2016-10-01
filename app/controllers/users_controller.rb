@@ -18,11 +18,19 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+  end
+  
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password,
+    params.require(:user).permit(:name, :profile, :email, :area, :password,
                                  :password_confirmation)
   end
 end
