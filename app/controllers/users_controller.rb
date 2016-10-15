@@ -35,6 +35,13 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :profile, :email, :area, :password,
+                                 :password_confirmation)
+  end
   
   def me?
     @user = User.find(params[:id])
@@ -49,13 +56,6 @@ class UsersController < ApplicationController
       redirect_to login_url
     end
   end  
-
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :profile, :email, :area, :password,
-                                 :password_confirmation)
-  end
 end
 
 
